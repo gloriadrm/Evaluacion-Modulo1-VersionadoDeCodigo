@@ -1,0 +1,14 @@
+name: Workflow Dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      nombre:
+        description: 'Nombre y apellidos'
+        required: true
+        default: 'Gloria del Rio Marquez'
+jobs:
+  saludo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Imprimir nombre completo
+        run: echo "${{ github.event.inputs.nombre }}!"
